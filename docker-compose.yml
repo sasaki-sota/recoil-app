@@ -1,0 +1,12 @@
+version: '3'
+services:
+  recoil-app:
+    container_name: recoil-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    command: sh -c "cd app && yarn dev"
+    ports:
+      - '3000:3000'
